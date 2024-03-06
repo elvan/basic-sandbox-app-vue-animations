@@ -23,8 +23,7 @@ export default {
       this.users.unshift(enteredUserName);
     },
     removeUser(user) {
-      const userIndex = this.users.indexOf(user);
-      this.users.splice(userIndex, 1);
+      this.users = this.users.filter((usr) => usr !== user);
     },
   },
 };
@@ -58,6 +57,7 @@ li {
 }
 
 .user-list-leave-active {
+  position: absolute;
   transition: all 1s ease-in;
 }
 
